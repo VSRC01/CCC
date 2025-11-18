@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://ca8rql7xgnrti"]
+
+[ext_resource type="Texture2D" uid="uid://0euav7v011xr" path="res://assets/textures/RealPaintSeamless.PNG" id="1_vn4ir"]
+[ext_resource type="Texture2D" uid="uid://bk0kq8jb3bth" path="res://assets/textures/RealPaintNormal.EXR" id="2_f7nv8"]
+[ext_resource type="Texture2D" uid="uid://bdpthys5kcms8" path="res://assets/textures/RealPaintORDp.EXR" id="3_8yqxk"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_vn4ir")
+albedo_texture_msdf = true
+orm_texture = ExtResource("3_8yqxk")
+normal_enabled = true
+normal_texture = ExtResource("2_f7nv8")

@@ -1,0 +1,856 @@
+[gd_scene load_steps=69 format=3 uid="uid://cx7nil0nqckni"]
+
+[ext_resource type="PackedScene" uid="uid://bk5f6w708r53j" path="res://assets/CCC/maquete/CasaDeCamaraeCadeiaMaquete.fbx" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bng5uhjyxyxno" path="res://assets/models/bridge.FBX" id="1_og1vs"]
+[ext_resource type="Texture2D" uid="uid://bjjasvt34vxm1" path="res://assets/CCC/maquete/CasaDeCamaraeCadeiaMaquete_3.png" id="2_2wyq8"]
+[ext_resource type="Material" uid="uid://tei44p407l1j" path="res://assets/CCC/materials/air.tres" id="2_sugp2"]
+[ext_resource type="Material" uid="uid://ca8rql7xgnrti" path="res://assets/CCC/materials/paint.tres" id="2_tbgi4"]
+[ext_resource type="Material" uid="uid://bjkes2nq46l1e" path="res://assets/CCC/materials/paintGrey.tres" id="2_tefeu"]
+[ext_resource type="Material" uid="uid://bygkstxtyw7ge" path="res://assets/CCC/materials/glass.tres" id="3_jyhfs"]
+[ext_resource type="Material" uid="uid://b1vfcq84fr14h" path="res://assets/CCC/materials/arenito.tres" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://x0uol8cij1mm" path="res://scripts/menu_3d.gd" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://ydqeevi88jfy" path="res://scripts/menu_button.gd" id="8_tipki"]
+[ext_resource type="SystemFont" uid="uid://dx8s8erou5prg" path="res://fonts/times_font.tres" id="9_85g3d"]
+[ext_resource type="Script" uid="uid://26hk8otgoi3n" path="res://scripts/quick_play_button.gd" id="9_a8y0u"]
+[ext_resource type="Script" uid="uid://dlknktvks8vsd" path="res://scripts/jornal_1.gd" id="9_choun"]
+[ext_resource type="Script" uid="uid://b65oifmq2ejs2" path="res://scripts/player.gd" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://dyxe3oq2arxrw" path="res://scenes/folha_porta.tscn" id="12_eb6dy"]
+[ext_resource type="Script" uid="uid://bhthjo2vxrmwk" path="res://scripts/main_door.gd" id="12_trceg"]
+[ext_resource type="Texture2D" uid="uid://ba1bto6aerwi3" path="res://assets/inputs/tile_0189.png" id="13_jbj1t"]
+[ext_resource type="Script" uid="uid://d2ukg6vahb4j0" path="res://scripts/cell_phone.gd" id="13_muem4"]
+[ext_resource type="Theme" uid="uid://cmnd8ng5o7h16" path="res://themes/Latte.tres" id="14_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://nsuvuylj06xg" path="res://assets/inputs/tile_0190.png" id="14_muem4"]
+[ext_resource type="Texture2D" uid="uid://2i1du41pxlfi" path="res://assets/icons/bell.svg" id="15_0ld40"]
+[ext_resource type="Texture2D" uid="uid://cd4pp8ijm8el5" path="res://assets/icons/camera.svg" id="16_jscy8"]
+[ext_resource type="Texture2D" uid="uid://cfpsupx8adkfb" path="res://assets/icons/gear.svg" id="17_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://kubx0lrb8pfd" path="res://assets/icons/info-square.svg" id="18_y6deb"]
+[ext_resource type="Texture2D" uid="uid://bjgi7poegvusa" path="res://assets/icons/save.svg" id="19_pm3ni"]
+[ext_resource type="Script" uid="uid://6hlv0yqhnsqp" path="res://scripts/camera_notify.gd" id="24_y6deb"]
+[ext_resource type="ArrayMesh" uid="uid://kvvkshs7ubrj" path="res://assets/models/world_quarter_mesh.tres" id="27_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://comq08yhky8uo" path="res://assets/models/CasaDeCamaraeCadeiaMaquete_11.png" id="28_yq6so"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxglm"]
+albedo_texture = ExtResource("2_2wyq8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tefeu"]
+size = Vector3(4.241211, 1, 64.37781)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jbj1t"]
+size = Vector3(31.509613, 1, 3.6532898)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eb6dy"]
+size = Vector3(1.5771484, 0.9373779, 64.37781)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
+size = Vector3(38.28174, 0.947876, 13.022888)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jkv2x"]
+size = Vector3(31.425, 0.9, 33.398)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_muem4"]
+size = Vector3(2.8003845, 1, 42.99722)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a8y0u"]
+size = Vector3(0.26464844, 1, 64.37781)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o6xl0"]
+size = Vector3(35.41095, 1, 4.2507324)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dp3eg"]
+size = Vector3(35.38344, 9.036255, 10.875488)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_choun"]
+size = Vector3(3.9611588, 1, 36.83441)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ld40"]
+size = Vector3(10.313049, 5.498474, 1.3027344)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_y6deb"]
+energy_multiplier = 3.0
+
+[sub_resource type="Sky" id="Sky_og1vs"]
+sky_material = SubResource("PhysicalSkyMaterial_y6deb")
+
+[sub_resource type="Environment" id="Environment_tbgi4"]
+background_mode = 2
+sky = SubResource("Sky_og1vs")
+tonemap_mode = 3
+tonemap_white = 6.0
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 1.0
+fog_enabled = true
+fog_sun_scatter = 0.1
+fog_density = 0.002
+fog_aerial_perspective = 1.0
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_2wyq8"]
+auto_exposure_enabled = true
+
+[sub_resource type="SystemFont" id="SystemFont_o6xl0"]
+font_names = PackedStringArray("Times New Roman")
+font_weight = 800
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_85g3d"]
+size = Vector2(4.115, 1.81)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_choun"]
+albedo_color = Color(0.74978, 0.74978, 0.74977994, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]
+size = Vector3(3.8729248, 1.734375, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tipki"]
+size = Vector2(1.56, 1.005)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tipki"]
+cull_mode = 2
+albedo_color = Color(1, 1, 0.90588236, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tipki"]
+size = Vector3(0.27696228, 0.1315918, 0.16296387)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_choun"]
+size = Vector2(0.855, 0.875)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ya4ey"]
+size = Vector2(0.51, 0.87)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_choun"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_ya4ey"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8y0u"]
+bg_color = Color(0.2627451, 0.2901961, 0.37254903, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ld40"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqmmt"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_y6deb"]
+size = Vector2(5.52, 7.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6deb"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_og1vs"]
+material = SubResource("StandardMaterial3D_y6deb")
+
+[sub_resource type="Curve" id="Curve_2wyq8"]
+_data = [Vector2(0.5287356, 0.43820226), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_vxglm"]
+curve = SubResource("Curve_2wyq8")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dp3eg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gqmmt"]
+points = PackedVector3Array(0.020000016, 1.7997324, -0.003686726, 0.020000016, 1.8666172, -0.084018946, -0.019999983, 1.7997324, -0.003686726, 0.020000016, -2.0959952, -0.003686726, 0.020000016, 1.9261158, -0.17016912, -0.019999983, 1.8666172, -0.084018946, -0.019999983, -2.0959952, -0.003686726, 0.020000016, -2.0959952, -0.7656868, -0.019999983, 1.9261158, -0.17016912, 0.020000016, 1.9769976, -0.26139134, -0.019999983, -2.0959952, -0.7656868, 0.020000016, 2.0959947, -0.7656868, -0.019999983, 1.9769976, -0.26139134, 0.020000016, 2.019262, -0.35701427, -0.019999983, 2.0959947, -0.7656868, 0.020000016, 2.091071, -0.66133696, -0.019999983, 2.019262, -0.35701427, 0.020000016, 2.052499, -0.45606834, -0.019999983, 2.091071, -0.66133696, 0.020000016, 2.076299, -0.55780756, -0.019999983, 2.052499, -0.45606834, -0.019999983, 2.076299, -0.55780756)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yc10j"]
+radius = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pm3ni"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fv21b"]
+albedo_texture = ExtResource("28_yq6so")
+
+[node name="Main" type="Node3D"]
+
+[node name="bridge" parent="." instance=ExtResource("1_og1vs")]
+transform = Transform3D(-4.371139e-06, 0, 100, 0, 100, 0, -100, 0, -4.371139e-06, -21.905174, 3.045792, 4.70425)
+
+[node name="bridge" parent="bridge" index="0"]
+material_override = SubResource("StandardMaterial3D_vxglm")
+
+[node name="CasaDeCamaraeCadeiaMaquete" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="Modelo" parent="CasaDeCamaraeCadeiaMaquete" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27470994, 0.44545412, 0.115311146)
+surface_material_override/0 = ExtResource("2_tefeu")
+surface_material_override/2 = ExtResource("2_tbgi4")
+surface_material_override/4 = ExtResource("2_sugp2")
+surface_material_override/7 = ExtResource("2_tefeu")
+surface_material_override/9 = ExtResource("3_jyhfs")
+surface_material_override/10 = ExtResource("4_jyhfs")
+surface_material_override/19 = ExtResource("4_jyhfs")
+
+[node name="floor1" type="StaticBody3D" parent="CasaDeCamaraeCadeiaMaquete"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3588867, 2.3730807, -12.28363)
+shape = SubResource("BoxShape3D_tefeu")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5116825, 2.3730807, -32.45838)
+shape = SubResource("BoxShape3D_jbj1t")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.314745, 2.534408, -12.28363)
+shape = SubResource("BoxShape3D_eb6dy")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.91678, 2.539657, 13.393829)
+shape = SubResource("BoxShape3D_trceg")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.488497, 2.571591, -14.091976)
+shape = SubResource("BoxShape3D_jkv2x")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.69596, 2.5657191, -14.62364)
+shape = SubResource("BoxShape3D_muem4")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.275758, 3.6435065, -12.28363)
+shape = SubResource("BoxShape3D_a8y0u")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.277634, 3.6435065, -12.28363)
+shape = SubResource("BoxShape3D_a8y0u")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.275759, 3.6435065, 20.005838)
+shape = SubResource("BoxShape3D_a8y0u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.485748, 2.3551705, 4.6820703)
+shape = SubResource("BoxShape3D_o6xl0")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.380821, 7.4961634, 14.520765)
+shape = SubResource("BoxShape3D_dp3eg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/floor1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.257412, 2.3551705, -15.833862)
+shape = SubResource("BoxShape3D_choun")
+
+[node name="walls1" type="StaticBody3D" parent="CasaDeCamaraeCadeiaMaquete"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/walls1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7389393, 5.7170763, -0.15136719)
+shape = SubResource("BoxShape3D_0ld40")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CasaDeCamaraeCadeiaMaquete/walls1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.598372, 5.7170763, -0.15136719)
+shape = SubResource("BoxShape3D_0ld40")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tbgi4")
+camera_attributes = SubResource("CameraAttributesPhysical_2wyq8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.45146182, 0.15352598, -0.8789833, 0.04592602, 0.97978294, 0.19472042, 0.89110774, -0.1282771, 0.43528372, -5.5397577, 4.6924553, 6.2553363)
+light_temperature = 4000.0
+light_energy = 9.0
+shadow_enabled = true
+directional_shadow_split_2 = 0.11
+directional_shadow_split_3 = 0.3
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 200.0
+
+[node name="Menu3D" type="Node3D" parent="."]
+script = ExtResource("7_o6xl0")
+
+[node name="Camera3D" type="Camera3D" parent="Menu3D"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 28.741968, 9.035283, -22.86483)
+
+[node name="Target1" type="Marker3D" parent="Menu3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.613289, 7.0557566, 4.7773523)
+
+[node name="MenuTitle" type="Label3D" parent="Menu3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4958, 14.267932, 4.591054)
+modulate = Color(0, 0, 0, 1)
+text = "Casa de 
+Câmara e 
+Cadeia"
+font = SubResource("SystemFont_o6xl0")
+font_size = 400
+outline_size = 5
+
+[node name="MenuButton" type="Label3D" parent="Menu3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4958, 8.909654, 4.591054)
+modulate = Color(0, 0, 0, 1)
+text = "Menu"
+font_size = 200
+outline_size = 5
+script = ExtResource("8_tipki")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Menu3D/MenuButton"]
+transform = Transform3D(1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.3711385e-08, 0, 0, -0.06360483)
+mesh = SubResource("PlaneMesh_85g3d")
+surface_material_override/0 = SubResource("StandardMaterial3D_choun")
+
+[node name="Area3D" type="Area3D" parent="Menu3D/MenuButton"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/MenuButton/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05670166, 0.01171875, 0)
+shape = SubResource("BoxShape3D_ya4ey")
+
+[node name="QuickPlayButton" type="Label3D" parent="Menu3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.4958, 6.9580326, 4.591054)
+modulate = Color(0, 0, 0, 1)
+text = "Play"
+font_size = 200
+outline_size = 5
+script = ExtResource("9_a8y0u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Menu3D/QuickPlayButton"]
+transform = Transform3D(1, -4.371139e-08, 4.371139e-08, 4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.3711385e-08, 0, 0, -0.06360483)
+mesh = SubResource("PlaneMesh_85g3d")
+surface_material_override/0 = SubResource("StandardMaterial3D_choun")
+
+[node name="Area3D" type="Area3D" parent="Menu3D/QuickPlayButton"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/QuickPlayButton/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05670166, 0.01171875, 0)
+shape = SubResource("BoxShape3D_ya4ey")
+
+[node name="Target2" type="Marker3D" parent="Menu3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.62845, 4.563116, 2.09511)
+
+[node name="Jornal1" type="MeshInstance3D" parent="Menu3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 23.689083, 4.544636, 0)
+mesh = SubResource("PlaneMesh_tipki")
+surface_material_override/0 = SubResource("StandardMaterial3D_tipki")
+script = ExtResource("9_choun")
+
+[node name="Title" type="Label3D" parent="Menu3D/Jornal1"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0, 0.032339916, -0.29670095)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.26666668, 0.26666668, 0.26666668, 0)
+text = "teste "
+font = ExtResource("9_85g3d")
+
+[node name="Text" type="Label3D" parent="Menu3D/Jornal1"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0, 0.032339927, -0.00643301)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "teste "
+font_size = 12
+
+[node name="Next" type="Label3D" parent="Menu3D/Jornal1"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0.14780807, 0.03233994, 0.33592033)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Próximo"
+font_size = 12
+
+[node name="Area3D" type="Area3D" parent="Menu3D/Jornal1/Next"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/Jornal1/Next/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043563843, -0.010620117, -0.097595215)
+shape = SubResource("BoxShape3D_tipki")
+
+[node name="Back" type="Label3D" parent="Menu3D/Jornal1"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, -0.14501762, 0.03233994, 0.33592033)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Voltar"
+font_size = 12
+
+[node name="Area3D" type="Area3D" parent="Menu3D/Jornal1/Back"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/Jornal1/Back/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009384155, -0.010620117, -0.097595215)
+shape = SubResource("BoxShape3D_tipki")
+
+[node name="Target3" type="Marker3D" parent="Menu3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.890419, 4.563116, 1.4020059)
+
+[node name="Jornal2" type="MeshInstance3D" parent="Menu3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 24.959047, 4.544636, 0)
+mesh = SubResource("PlaneMesh_choun")
+surface_material_override/0 = SubResource("StandardMaterial3D_tipki")
+script = ExtResource("9_choun")
+
+[node name="Title" type="Label3D" parent="Menu3D/Jornal2"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0, 0.032339916, -0.29670095)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.26666668, 0.26666668, 0.26666668, 0)
+text = "teste "
+font = ExtResource("9_85g3d")
+
+[node name="Text" type="Label3D" parent="Menu3D/Jornal2"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0, 0.032339927, -0.00643301)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "teste "
+font_size = 12
+
+[node name="Next" type="Label3D" parent="Menu3D/Jornal2"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0.14780807, 0.03233994, 0.33592033)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Próximo"
+font_size = 12
+
+[node name="Area3D" type="Area3D" parent="Menu3D/Jornal2/Next"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/Jornal2/Next/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043563843, -0.010620117, -0.097595215)
+shape = SubResource("BoxShape3D_tipki")
+
+[node name="Back" type="Label3D" parent="Menu3D/Jornal2"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, -0.14501762, 0.03233994, 0.33592033)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Voltar"
+font_size = 12
+
+[node name="Area3D" type="Area3D" parent="Menu3D/Jornal2/Back"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/Jornal2/Back/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009384155, -0.010620117, -0.097595215)
+shape = SubResource("BoxShape3D_tipki")
+
+[node name="Target4" type="Marker3D" parent="Menu3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.271788, 4.563116, 2.0228958)
+
+[node name="Jornal3" type="MeshInstance3D" parent="Menu3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 26.235678, 4.544636, 0)
+mesh = SubResource("PlaneMesh_tipki")
+surface_material_override/0 = SubResource("StandardMaterial3D_tipki")
+script = ExtResource("9_choun")
+
+[node name="Title" type="Label3D" parent="Menu3D/Jornal3"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0, 0.032339916, -0.29670095)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0.26666668, 0.26666668, 0.26666668, 0)
+text = "teste "
+font = ExtResource("9_85g3d")
+
+[node name="Text" type="Label3D" parent="Menu3D/Jornal3"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0, 0.032339927, -0.00643301)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "teste "
+font_size = 12
+
+[node name="Next" type="Label3D" parent="Menu3D/Jornal3"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0.14780807, 0.03233994, 0.33592033)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Próximo"
+font_size = 12
+
+[node name="Area3D" type="Area3D" parent="Menu3D/Jornal3/Next"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/Jornal3/Next/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043563843, -0.010620117, -0.097595215)
+shape = SubResource("BoxShape3D_tipki")
+
+[node name="Back" type="Label3D" parent="Menu3D/Jornal3"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, -0.14501762, 0.03233994, 0.33592033)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Voltar"
+font_size = 12
+
+[node name="Area3D" type="Area3D" parent="Menu3D/Jornal3/Back"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/Jornal3/Back/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009384155, -0.010620117, -0.097595215)
+shape = SubResource("BoxShape3D_tipki")
+
+[node name="Target5" type="Marker3D" parent="Menu3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.33159, 4.563116, 1.2139822)
+
+[node name="Jornal4" type="MeshInstance3D" parent="Menu3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 27.311125, 4.544636, 0)
+mesh = SubResource("PlaneMesh_ya4ey")
+surface_material_override/0 = SubResource("StandardMaterial3D_tipki")
+script = ExtResource("9_choun")
+
+[node name="Next" type="Label3D" parent="Menu3D/Jornal4"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0.0035037994, 0.032339923, -0.06758547)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Próximo"
+font_size = 12
+
+[node name="Area3D" type="Area3D" parent="Menu3D/Jornal4/Next"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/Jornal4/Next/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0043563843, -0.010620117, -0.097595215)
+shape = SubResource("BoxShape3D_tipki")
+
+[node name="Back" type="Label3D" parent="Menu3D/Jornal4"]
+transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0.00907135, 0.03233994, 0.33592033)
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Voltar"
+font_size = 12
+
+[node name="Area3D" type="Area3D" parent="Menu3D/Jornal4/Back"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu3D/Jornal4/Back/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009384155, -0.010620117, -0.097595215)
+shape = SubResource("BoxShape3D_tipki")
+
+[node name="Target6" type="Marker3D" parent="Menu3D"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -5.5578313, 4.563116, 11.136185)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -5.463931, 4.400284, 10.949754)
+slide_on_ceiling = false
+floor_snap_length = 0.2
+script = ExtResource("11_ya4ey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, -0.18853807, -0.51795816, 0.08132458)
+shape = SubResource("CapsuleShape3D_choun")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.4883678, -0.53563905, -2.3413525e-08)
+shape = SubResource("SeparationRayShape3D_ya4ey")
+
+[node name="CellPhone" type="Control" parent="Player"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("13_muem4")
+
+[node name="ScreenContainer" type="AspectRatioContainer" parent="Player/CellPhone"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -740.0
+offset_top = -1124.855
+offset_right = -79.26465
+offset_bottom = -106.96716
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(660.735, 1017.883)
+size_flags_vertical = 3
+ratio = 0.6
+
+[node name="Frame" type="PanelContainer" parent="Player/CellPhone/ScreenContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a8y0u")
+
+[node name="MarginContainer" type="MarginContainer" parent="Player/CellPhone/ScreenContainer/Frame"]
+texture_filter = 1
+layout_mode = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 45
+
+[node name="Screen" type="PanelContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("14_dp3eg")
+
+[node name="Bell" type="Sprite2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen"]
+visible = false
+position = Vector2(275.833, 460.3501)
+texture = ExtResource("15_0ld40")
+
+[node name="Tutorial" type="MarginContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Tutorial"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Tutorial/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Boas Vindas"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Tutorial/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 170
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0ld40")
+
+[node name="Label2" type="Label" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Tutorial/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "asojdhasodhj
+asldhjkasdjnkl
+wasd
+mouse"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Tutorial/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 190
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gqmmt")
+
+[node name="Understood" type="Button" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Tutorial/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Prossegue para fechar o tutorial"
+theme_override_font_sizes/font_size = 40
+text = "Entendido"
+
+[node name="Menu" type="MarginContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="GridContainer" type="GridContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 3
+
+[node name="CameraButton" type="Button" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Camera2" type="Sprite2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer/CameraButton"]
+scale = Vector2(0.2555365, 0.2555365)
+texture = ExtResource("16_jscy8")
+centered = false
+
+[node name="SettingsButton" type="Button" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Gear" type="Sprite2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer/SettingsButton"]
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("17_pm3ni")
+centered = false
+
+[node name="InfosButton" type="Button" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="InfoSquare" type="Sprite2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer/InfosButton"]
+scale = Vector2(0.252, 0.252)
+texture = ExtResource("18_y6deb")
+centered = false
+
+[node name="SaveButton" type="Button" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+
+[node name="Save" type="Sprite2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer/SaveButton"]
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("19_pm3ni")
+centered = false
+
+[node name="CameraTuto" type="MarginContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/CameraTuto"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/CameraTuto/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Câmera"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/CameraTuto/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 170
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0ld40")
+
+[node name="Label2" type="Label" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/CameraTuto/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "asojdhasodhj
+asldhjkasdjnkl
+wasd
+mouse"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/CameraTuto/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 190
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gqmmt")
+
+[node name="CameraUnderstood" type="Button" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/CameraTuto/VBoxContainer"]
+layout_mode = 2
+tooltip_text = "Prossegue para fechar o tutorial"
+theme_override_font_sizes/font_size = 40
+text = "Entendido"
+
+[node name="Camera" type="PanelContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("14_dp3eg")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Camera"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Camera/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(540, 927)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Camera/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2497663, 4.3301444, 11.226793)
+
+[node name="Line2D" type="Line2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Camera"]
+position = Vector2(6.333008, -23.666988)
+points = PackedVector2Array(-10.5, 292.6963, 535.833, 292.6963)
+width = 3.0
+
+[node name="Line2D2" type="Line2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Camera"]
+position = Vector2(6.333008, 268.108)
+points = PackedVector2Array(-10.5, 292.6963, 535.833, 292.6963)
+width = 3.0
+
+[node name="Line2D3" type="Line2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Camera"]
+position = Vector2(0, 291.775)
+points = PackedVector2Array(155.83301, -292.4121, 155.83301, 547.5879)
+width = 3.0
+
+[node name="Line2D4" type="Line2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Camera"]
+position = Vector2(218.662, 277.54492)
+scale = Vector2(0.95182973, 0.95182973)
+points = PackedVector2Array(155.83301, -292.4121, 157.86719, 594.2549)
+width = 3.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Camera"]
+position = Vector2(269.16687, 885.0798)
+scale = Vector2(98.778984, 13.0434065)
+mesh = SubResource("QuadMesh_y6deb")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Camera"]
+position = Vector2(269.1666, 886.02954)
+scale = Vector2(76.08671, 77.33694)
+mesh = SubResource("SphereMesh_og1vs")
+texture = SubResource("CurveTexture_vxglm")
+
+[node name="TabContainer" type="VBoxContainer" parent="Player/CellPhone"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -28.0
+offset_right = 2.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+pivot_offset = Vector2(82, 28)
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/CellPhone/TabContainer"]
+custom_minimum_size = Vector2(0, 28.01)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Player/CellPhone/TabContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_dp3eg")
+
+[node name="TextureRect" type="TextureRect" parent="Player/CellPhone/TabContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("13_jbj1t")
+
+[node name="TextureRect2" type="TextureRect" parent="Player/CellPhone/TabContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("14_muem4")
+
+[node name="MainDoor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6332, 2.9716759, 0)
+script = ExtResource("12_trceg")
+
+[node name="FolhaPorta" parent="MainDoor" instance=ExtResource("12_eb6dy")]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 0, -1, 1, -4.371139e-08, -4.3711385e-08, -0.7372427, 2.1063757, 4.7257694e-07)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainDoor/FolhaPorta/2aa129d47ee01cb0e7f9b3775c759603" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainDoor/FolhaPorta/2aa129d47ee01cb0e7f9b3775c759603/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_gqmmt")
+
+[node name="FolhaPorta2" parent="MainDoor" instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1.3113416e-07, 1, 0, 4.371138e-08, -7.642741e-15, -1, -1, 1.3113416e-07, -4.3711385e-08, 0.79386234, 2.1063757, 6.7335714e-07)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MainDoor/FolhaPorta2/2aa129d47ee01cb0e7f9b3775c759603" index="0"]
+
+[node name="Area3D" type="Area3D" parent="MainDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04704666, 0.9160452, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainDoor/Area3D"]
+shape = SubResource("SphereShape3D_yc10j")
+
+[node name="DoorN1" type="Node3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13.053304, 2.9716759, -2.3567202)
+
+[node name="FolhaPorta" parent="DoorN1" instance=ExtResource("12_eb6dy")]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 0, -1, 1, -4.371139e-08, -4.3711385e-08, -0.7372427, 2.1063757, 4.7257694e-07)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorN1/FolhaPorta/2aa129d47ee01cb0e7f9b3775c759603" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorN1/FolhaPorta/2aa129d47ee01cb0e7f9b3775c759603/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_gqmmt")
+
+[node name="FolhaPorta2" parent="DoorN1" instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1.3113416e-07, 1, 0, 4.371138e-08, -7.642741e-15, -1, -1, 1.3113416e-07, -4.3711385e-08, 0.79386234, 2.1063757, 6.7335714e-07)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorN1/FolhaPorta2/2aa129d47ee01cb0e7f9b3775c759603" index="0"]
+
+[node name="CameraNotify" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.914734, 3.800035, -2.3105607)
+script = ExtResource("24_y6deb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraNotify"]
+shape = SubResource("BoxShape3D_pm3ni")
+
+[node name="WorldQuarterMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.115, 0, 0, 0, 1, -2048, -90.321, -2048)
+mesh = ExtResource("27_2f3dj")
+surface_material_override/0 = SubResource("StandardMaterial3D_fv21b")
+
+[connection signal="mouse_entered" from="Menu3D/MenuButton/Area3D" to="Menu3D/MenuButton" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Menu3D/MenuButton/Area3D" to="Menu3D/MenuButton" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_entered" from="Menu3D/QuickPlayButton/Area3D" to="Menu3D/QuickPlayButton" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Menu3D/QuickPlayButton/Area3D" to="Menu3D/QuickPlayButton" method="_on_area_3d_mouse_exited"]
+[connection signal="mouse_entered" from="Menu3D/Jornal1/Next/Area3D" to="Menu3D/Jornal1" method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Menu3D/Jornal1/Next/Area3D" to="Menu3D/Jornal1" method="_on_area_3d_mouse_exited"]
+[connection signal="body_entered" from="CameraNotify" to="CameraNotify" method="_on_body_entered"]
+
+[editable path="bridge"]
+[editable path="CasaDeCamaraeCadeiaMaquete"]
+[editable path="MainDoor/FolhaPorta"]
+[editable path="MainDoor/FolhaPorta2"]
+[editable path="DoorN1/FolhaPorta"]
+[editable path="DoorN1/FolhaPorta2"]
