@@ -1,3 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+assets/CCC/maquete/CasaDeCamaraeCadeiaMaquete.fbx
+assets/models/CasaDeCamaraeCadeiaMaquete.fbx
+assets/models/world_quarter_mesh.tres
