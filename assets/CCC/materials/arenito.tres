@@ -1,6 +1,7 @@
-[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://b1vfcq84fr14h"]
+[gd_resource type="ORMMaterial3D" load_steps=5 format=3 uid="uid://b1vfcq84fr14h"]
 
 [ext_resource type="Texture2D" uid="uid://cvy28niyxjsok" path="res://assets/textures/RealArenitoSeamless.PNG" id="1_mujya"]
+[ext_resource type="Texture2D" uid="uid://e7vb7n748lta" path="res://assets/textures/T_MudStain_wbhsciwv_2K_MR.EXR" id="2_1m7kk"]
 [ext_resource type="Texture2D" uid="uid://ds4awr0eu6mfy" path="res://assets/textures/RealArenitoNormal.EXR" id="2_vs3l0"]
 [ext_resource type="Texture2D" uid="uid://cu2xh82eu0207" path="res://assets/textures/RealArenitoORDp.EXR" id="3_1m7kk"]
 
@@ -10,3 +11,10 @@ albedo_texture = ExtResource("1_mujya")
 orm_texture = ExtResource("3_1m7kk")
 normal_enabled = true
 normal_texture = ExtResource("2_vs3l0")
+rim = 0.0
+anisotropy = 1.0
+ao_enabled = true
+ao_light_affect = 1.0
+detail_mask = ExtResource("2_1m7kk")
+stencil_flags = 2
+stencil_outline_thickness = 0.1

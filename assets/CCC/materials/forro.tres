@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" load_steps=3 format=3 uid="uid://2s6dnsh8xt2r"]
+
+[ext_resource type="Texture2D" uid="uid://bkij0p6td6pp7" path="res://assets/textures/T_Wood_Veneer_Wall_Panels_vlskbcz_2K_N.EXR" id="1_8kg0v"]
+[ext_resource type="Texture2D" uid="uid://b0a1wnisgmh3d" path="res://assets/textures/T_WoodVeneerWallPanels_vlskbcz_2K_ORDp.EXR" id="2_wq66f"]
+
+[resource]
+orm_texture = ExtResource("2_wq66f")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("1_8kg0v")
+ao_enabled = true
+ao_light_affect = 1.0
+uv1_scale = Vector3(0.36, 0.36, 0.36)
+uv2_scale = Vector3(0.585, 0.585, 0.585)

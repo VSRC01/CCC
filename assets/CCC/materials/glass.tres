@@ -1,6 +1,9 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bygkstxtyw7ge"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bygkstxtyw7ge"]
+
+[ext_resource type="Texture2D" uid="uid://e7vb7n748lta" path="res://assets/textures/T_MudStain_wbhsciwv_2K_MR.EXR" id="1_jn00e"]
 
 [resource]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.21960784)
+albedo_color = Color(1, 1, 1, 0.039215688)
 roughness = 0.0
+detail_mask = ExtResource("1_jn00e")

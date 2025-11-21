@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://lwu5ucrtfows"]
+
+[ext_resource type="Texture2D" uid="uid://b6lnel4yvfx47" path="res://assets/textures/T_Concrete_Floor_Tiles_vl0gfdalw_2K_D.EXR" id="1_q48rd"]
+[ext_resource type="Texture2D" uid="uid://ylv3yckft5l2" path="res://assets/textures/T_Concrete_Floor_Tiles_vl0gfdalw_2K_N.EXR" id="2_10o4f"]
+[ext_resource type="Texture2D" uid="uid://lchtt86hdhsu" path="res://assets/textures/T_ConcreteFloorTiles_vl0gfdalw_2K_ORDp.EXR" id="3_c3v2q"]
+
+[resource]
+albedo_texture = ExtResource("1_q48rd")
+orm_texture = ExtResource("3_c3v2q")
+normal_enabled = true
+normal_texture = ExtResource("2_10o4f")
+uv1_scale = Vector3(0.805, 0.805, 0.805)

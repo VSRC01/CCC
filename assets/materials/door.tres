@@ -1,0 +1,15 @@
+[gd_resource type="ORMMaterial3D" load_steps=3 format=3 uid="uid://bq8kifb4bpqua"]
+
+[ext_resource type="Texture2D" uid="uid://e7vb7n748lta" path="res://assets/textures/T_MudStain_wbhsciwv_2K_MR.EXR" id="1_2ceqs"]
+[ext_resource type="Texture2D" uid="uid://b0a1wnisgmh3d" path="res://assets/textures/T_WoodVeneerWallPanels_vlskbcz_2K_ORDp.EXR" id="2_ya8ei"]
+
+[resource]
+albedo_color = Color(1, 0.80784315, 0, 1)
+orm_texture = ExtResource("2_ya8ei")
+normal_enabled = true
+normal_texture = ExtResource("2_ya8ei")
+ao_enabled = true
+ao_light_affect = 1.0
+detail_mask = ExtResource("1_2ceqs")
+detail_blend_mode = 2
+uv1_scale = Vector3(0.5, 0.5, 0.5)

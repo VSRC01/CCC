@@ -120,6 +120,7 @@ var notification_page : notification_enum = notification_enum.tutorial
 #██  ██ ██ ██    ██    ██    ██ ██         ██    
 #██   ████  ██████     ██    ██ ██         ██    
 func notify() -> void:
+	mini_screen()
 	menu.visible = false
 	bell.visible = true
 	notification = true
@@ -186,3 +187,17 @@ func tab_positioner(_delta) -> void:
 			pass
 		mode.mini:
 			pass
+			
+			
+#████████  █████  ██   ██ ███████         ██████  ██   ██  ██████  ████████  ██████  
+   #██    ██   ██ ██  ██  ██              ██   ██ ██   ██ ██    ██    ██    ██    ██ 
+   #██    ███████ █████   █████           ██████  ███████ ██    ██    ██    ██    ██ 
+   #██    ██   ██ ██  ██  ██              ██      ██   ██ ██    ██    ██    ██    ██ 
+   #██    ██   ██ ██   ██ ███████ ███████ ██      ██   ██  ██████     ██     ██████  
+@onready var sub_viewport_container: SubViewportContainer = $ScreenContainer/Frame/MarginContainer/Camera/SubViewportContainer
+
+func take_photo() -> void:
+	sub_viewport_container.pivot_offset = Vector2(270, 463)
+	var tween = create_tween()
+	tween.tween_property(sub_viewport_container, "scale", Vector2(0.8, 0.8), .1)
+	tween.tween_property(sub_viewport_container, "scale", Vector2(1, 1), .1)

@@ -1,0 +1,9 @@
+[gd_resource type="ORMMaterial3D" load_steps=3 format=3 uid="uid://qojv221esey6"]
+
+[ext_resource type="Texture2D" uid="uid://bk0kq8jb3bth" path="res://assets/textures/RealPaintNormal.EXR" id="1_6ubb5"]
+[ext_resource type="Texture2D" uid="uid://bdpthys5kcms8" path="res://assets/textures/RealPaintORDp.EXR" id="2_ntlce"]
+
+[resource]
+albedo_color = Color(0.27058825, 0.59607846, 1, 1)
+orm_texture = ExtResource("2_ntlce")
+normal_texture = ExtResource("1_6ubb5")

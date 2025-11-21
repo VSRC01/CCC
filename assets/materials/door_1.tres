@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://e4vf4h88pxcr"]
+
+[ext_resource type="Texture2D" uid="uid://dc0wbkkvnknj6" path="res://assets/CCC/maquete/CasaDeCamaraeCadeiaMaquete_5.png" id="1_i6rpw"]
+
+[resource]
+albedo_texture = ExtResource("1_i6rpw")
