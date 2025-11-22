@@ -98,6 +98,7 @@ func _input(_event: InputEvent) -> void:
 			 # open camera 
 			pass                                                             
 		if Input.is_action_just_pressed("left_mouse"):
+			print("left_mouse")
 			#██      ███████ ███████ ████████         ███    ███  ██████  ██    ██ ███████ ███████ 
 			#██      ██      ██         ██            ████  ████ ██    ██ ██    ██ ██      ██      
 			#██      █████   █████      ██            ██ ████ ██ ██    ██ ██    ██ ███████ █████   
@@ -116,13 +117,14 @@ func _input(_event: InputEvent) -> void:
 						ray_parent = ray_collider.get_parent()
 						hold_pannel = ray_collider
 						hold_pannel.reparent(Camera)
-						hold_pannel.freeze = true
-						var tween = create_tween()
-						tween.set_parallel()
-						tween.tween_property(hold_pannel, "position", Vector3(0,0,-2), .5)
-						tween.tween_property(hold_pannel, "rotation", Vector3(deg_to_rad(0), deg_to_rad(-90), deg_to_rad(0)), .5)
-						is_holding_pannel = true
-						return		
+						if hold_pannel.get_parent().name == Camera.name:
+							hold_pannel.freeze = true
+							var tween = create_tween()
+							tween.set_parallel()
+							tween.tween_property(hold_pannel, "position", Vector3(0,0,-2), .5)
+							tween.tween_property(hold_pannel, "rotation", Vector3(deg_to_rad(0), deg_to_rad(-90), deg_to_rad(0)), .5)
+							is_holding_pannel = true
+							return		
 			if is_camera_mode:
 				cell_phone.take_photo()
 				var ray_collider = ray_cast_3d.get_collider()
