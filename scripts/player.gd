@@ -53,7 +53,9 @@ func _unhandled_input(event: InputEvent) -> void:
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 
 var is_holding_pannel : bool = false
+var is_holding_model : bool = false
 var hold_pannel
+var hold_model
 var ray_parent
 						  
 func _input(_event: InputEvent) -> void:
@@ -109,10 +111,27 @@ func _input(_event: InputEvent) -> void:
 				is_holding_pannel = false	
 				hold_pannel.freeze = false
 				hold_pannel = null
-				return	
-			if not is_camera_mode and not is_holding_pannel:
+				return
+			if is_holding_model:
+				hold_model.reparent(ray_parent)
+				is_holding_model = false
+				hold_model.freeze = false
+				hold_model = null
+				return
+			if not is_camera_mode and not is_holding_pannel and not is_holding_model:
 				var ray_collider = ray_cast_3d.get_collider()
 				if ray_collider is RigidBody3D:
+					if ray_collider.get_parent().name == "Maquete":
+						ray_parent = ray_collider.get_parent()
+						hold_model = ray_collider
+						hold_model.reparent(Camera)
+						hold_model.freeze = true
+						var tween = create_tween()
+						tween.set_parallel()
+						tween.tween_property(hold_pannel, "position", Vector3(0,0,-2), .5)
+						tween.tween_property(hold_pannel, "rotation", Vector3(deg_to_rad(0), deg_to_rad(-90), deg_to_rad(0)), .5)
+						is_holding_model = true
+						return
 					if ray_collider.get_parent().name == "SjPannels3D":
 						ray_parent = ray_collider.get_parent()
 						hold_pannel = ray_collider
@@ -141,7 +160,7 @@ func drop_pannel() -> void:
 		is_holding_pannel = false	
 		hold_pannel.freeze = false
 		hold_pannel = null
-		return	
+		return
 				
 	
 				
@@ -199,3 +218,12 @@ func _physics_process(delta: float) -> void:
 	velocity = movement_velocity
 		
 	move_and_slide()
+	
+	
+ #██████       ██  █████  ██    ██  ██████  ██      ████████  ██████  
+#██    ██      ██ ██   ██ ██    ██ ██    ██ ██         ██    ██    ██ 
+#██    ██      ██ ███████ ██    ██ ██    ██ ██         ██    ██    ██ 
+#██    ██ ██   ██ ██   ██  ██  ██  ██    ██ ██         ██    ██    ██ 
+ #██████   █████  ██   ██   ████    ██████  ███████    ██     ██████  
+																	 
+																	 
