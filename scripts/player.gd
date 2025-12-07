@@ -63,6 +63,10 @@ func _input(_event: InputEvent) -> void:
 		Camera.rotation.x += -_event.screen_relative.y * mouse_sense
 		self.rotation.y += -_event.screen_relative.x * mouse_sense
 	if possessed:
+		if Input.is_action_just_pressed("mouse_wheel_up") and is_holding_model:
+			hold_model.rotation.x += .1
+		if Input.is_action_just_pressed("mouse_wheel_down") and is_holding_model:
+			hold_model.rotation.x -= .1
 		if Input.is_action_just_pressed("esc"):
 			#███████ ███████  ██████ 
 			#██      ██      ██      
@@ -128,8 +132,8 @@ func _input(_event: InputEvent) -> void:
 						hold_model.freeze = true
 						var tween = create_tween()
 						tween.set_parallel()
-						tween.tween_property(hold_pannel, "position", Vector3(0,0,-2), .5)
-						tween.tween_property(hold_pannel, "rotation", Vector3(deg_to_rad(0), deg_to_rad(-90), deg_to_rad(0)), .5)
+						tween.tween_property(hold_model, "position", Vector3(0,0,-2), .5)
+						tween.tween_property(hold_model, "rotation", Vector3(deg_to_rad(0), deg_to_rad(0), deg_to_rad(0)), .5)
 						is_holding_model = true
 						return
 					if ray_collider.get_parent().name == "SjPannels3D":

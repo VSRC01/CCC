@@ -1,0 +1,210 @@
+[gd_scene load_steps=25 format=3 uid="uid://cr4ymdgst5uao"]
+
+[ext_resource type="Script" uid="uid://c7r8o6th3jmh8" path="res://scripts/lockpick_minigame.gd" id="1_8eswm"]
+[ext_resource type="Texture2D" uid="uid://dr76mufgqkybq" path="res://assets/lockpick-assets/lockpick-assets_10.svg" id="1_pdbna"]
+[ext_resource type="Texture2D" uid="uid://b6o2j844p7tq8" path="res://assets/lockpick-assets/lockpick-assets_9.svg" id="2_t5dha"]
+[ext_resource type="Texture2D" uid="uid://c4jgav5aq57on" path="res://assets/lockpick-assets/lockpick-assets_3.svg" id="3_5shl1"]
+[ext_resource type="Texture2D" uid="uid://ehenhyaf6oxg" path="res://assets/lockpick-assets/lockpick-assets_2.svg" id="4_8m6ht"]
+[ext_resource type="Texture2D" uid="uid://nb2ilwq5666h" path="res://assets/lockpick-assets/lockpick-assets_4.svg" id="5_t2281"]
+[ext_resource type="Texture2D" uid="uid://b5n1c22akmar2" path="res://assets/lockpick-assets/lockpick-assets_6.svg" id="6_3ujye"]
+[ext_resource type="Texture2D" uid="uid://cmkhknuvc8ovf" path="res://assets/lockpick-assets/lockpick-assets_5.svg" id="7_ti47j"]
+[ext_resource type="Texture2D" uid="uid://bt2snnlblf1yq" path="res://assets/lockpick-assets/lockpick-assets_8.svg" id="8_g22he"]
+[ext_resource type="Texture2D" uid="uid://dxrwvogj5nrko" path="res://assets/lockpick-assets/lockpick-assets_7.svg" id="9_8eswm"]
+[ext_resource type="Script" uid="uid://cs072grfpo2se" path="res://scripts/pin.gd" id="9_mfkcs"]
+[ext_resource type="Texture2D" uid="uid://yktwmdctxr5c" path="res://assets/lockpick-assets/lockpick-assets_11.svg" id="10_mfkcs"]
+[ext_resource type="Texture2D" uid="uid://b2appmibm8uot" path="res://assets/lockpick-assets/lockpick-assets_12.svg" id="11_54ixt"]
+[ext_resource type="Texture2D" uid="uid://cyvpfln64elli" path="res://assets/lockpick-assets/lockpick-assets_13.svg" id="12_rcsrg"]
+[ext_resource type="Texture2D" uid="uid://ct5btep3qqi0b" path="res://assets/lockpick-assets/lockpick-assets_14.svg" id="13_13m3k"]
+[ext_resource type="Texture2D" uid="uid://die5l4j3un3rf" path="res://assets/lockpick-assets/lockpick-assets_15.svg" id="14_7fc8m"]
+[ext_resource type="Texture2D" uid="uid://drax2nv5ji34r" path="res://assets/lockpick-assets/lockpick-assets_16.svg" id="15_npht6"]
+[ext_resource type="Texture2D" uid="uid://c141vqhjmxl6f" path="res://assets/lockpick-assets/lockpick-assets_19.svg" id="16_tttmw"]
+[ext_resource type="Texture2D" uid="uid://dbeulk330peww" path="res://assets/lockpick-assets/lockpick-assets_20.svg" id="17_7v6it"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8eswm"]
+size = Vector2(489, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsrg"]
+size = Vector2(51, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54ixt"]
+size = Vector2(52, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfkcs"]
+size = Vector2(55, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g22he"]
+size = Vector2(56, 9)
+
+[node name="LockpickMinigame" type="Node2D"]
+script = ExtResource("1_8eswm")
+
+[node name="Lock" type="Node2D" parent="."]
+
+[node name="LockpickAssets10" type="Sprite2D" parent="Lock"]
+position = Vector2(1594, 740)
+texture = ExtResource("1_pdbna")
+
+[node name="LockpickAssets9" type="Sprite2D" parent="Lock/LockpickAssets10"]
+position = Vector2(0, -301)
+texture = ExtResource("2_t5dha")
+
+[node name="LockpickAssets3" type="Sprite2D" parent="Lock"]
+position = Vector2(1209, 577)
+texture = ExtResource("3_5shl1")
+
+[node name="LockpickAssets2" type="Sprite2D" parent="Lock/LockpickAssets3"]
+position = Vector2(-3, -105)
+texture = ExtResource("4_8m6ht")
+
+[node name="Area2D" type="Area2D" parent="Lock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lock/Area2D"]
+z_index = 1
+position = Vector2(1658.5, 607.5)
+shape = SubResource("RectangleShape2D_8eswm")
+debug_color = Color(0.9299642, 0.26560158, 0, 0.41960785)
+
+[node name="Marker2D" type="Marker2D" parent="Lock"]
+position = Vector2(1191, 410)
+
+[node name="GiraGiras" type="Node2D" parent="."]
+position = Vector2(893, 125)
+
+[node name="LockpickAssets4" type="Sprite2D" parent="GiraGiras"]
+position = Vector2(-576, 13)
+texture = ExtResource("5_t2281")
+
+[node name="LockpickAssets5" type="Sprite2D" parent="GiraGiras"]
+position = Vector2(-161, 0)
+texture = ExtResource("7_ti47j")
+
+[node name="Lockpick" type="Node2D" parent="."]
+position = Vector2(914, 314)
+
+[node name="LockpickAssets4" type="Sprite2D" parent="Lockpick"]
+position = Vector2(-599, 17)
+texture = ExtResource("5_t2281")
+
+[node name="LockpickAssets6" type="Sprite2D" parent="Lockpick"]
+position = Vector2(-184, 22)
+texture = ExtResource("6_3ujye")
+
+[node name="FirstPin" type="Node2D" parent="."]
+position = Vector2(1493, 672)
+script = ExtResource("9_mfkcs")
+
+[node name="Groove" type="Sprite2D" parent="FirstPin"]
+texture = ExtResource("8_g22he")
+
+[node name="Spring" type="Sprite2D" parent="FirstPin"]
+position = Vector2(0, 203)
+texture = ExtResource("9_8eswm")
+offset = Vector2(0, -101.28)
+
+[node name="PurplePin" type="Sprite2D" parent="FirstPin"]
+position = Vector2(0, -175)
+texture = ExtResource("10_mfkcs")
+
+[node name="YellowPin" type="Sprite2D" parent="FirstPin/PurplePin"]
+position = Vector2(0, 109)
+texture = ExtResource("11_54ixt")
+
+[node name="Area2D" type="Area2D" parent="FirstPin/PurplePin"]
+position = Vector2(0, 175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstPin/PurplePin/Area2D"]
+position = Vector2(-1, -145)
+shape = SubResource("RectangleShape2D_rcsrg")
+
+[node name="Marker2D" type="Marker2D" parent="FirstPin"]
+position = Vector2(0, -300)
+
+[node name="SecondPin" type="Node2D" parent="."]
+position = Vector2(1598, 672)
+script = ExtResource("9_mfkcs")
+
+[node name="Groove" type="Sprite2D" parent="SecondPin"]
+texture = ExtResource("8_g22he")
+
+[node name="Spring" type="Sprite2D" parent="SecondPin"]
+position = Vector2(0, 202)
+texture = ExtResource("9_8eswm")
+offset = Vector2(0, -100.76)
+
+[node name="PurplePin" type="Sprite2D" parent="SecondPin"]
+position = Vector2(0, -154)
+texture = ExtResource("12_rcsrg")
+
+[node name="YellowPin" type="Sprite2D" parent="SecondPin/PurplePin"]
+position = Vector2(-22, 112)
+texture = ExtResource("13_13m3k")
+
+[node name="Area2D" type="Area2D" parent="SecondPin/PurplePin"]
+position = Vector2(0, 154)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondPin/PurplePin/Area2D"]
+position = Vector2(2, -103)
+shape = SubResource("RectangleShape2D_54ixt")
+
+[node name="Marker2D" type="Marker2D" parent="SecondPin"]
+position = Vector2(0, -302)
+
+[node name="ThirdPin" type="Node2D" parent="."]
+position = Vector2(1704, 671)
+script = ExtResource("9_mfkcs")
+
+[node name="Groove" type="Sprite2D" parent="ThirdPin"]
+texture = ExtResource("8_g22he")
+
+[node name="Spring" type="Sprite2D" parent="ThirdPin"]
+position = Vector2(0, 204)
+texture = ExtResource("9_8eswm")
+offset = Vector2(0, -101.855)
+
+[node name="PurplePin" type="Sprite2D" parent="ThirdPin"]
+position = Vector2(0, -174)
+texture = ExtResource("14_7fc8m")
+
+[node name="YellowPin" type="Sprite2D" parent="ThirdPin/PurplePin"]
+position = Vector2(0, 111)
+texture = ExtResource("15_npht6")
+
+[node name="Area2D" type="Area2D" parent="ThirdPin/PurplePin"]
+position = Vector2(0, 174)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ThirdPin/PurplePin/Area2D"]
+position = Vector2(1.5, -138)
+shape = SubResource("RectangleShape2D_mfkcs")
+
+[node name="Marker2D" type="Marker2D" parent="ThirdPin"]
+position = Vector2(0, -300)
+
+[node name="FourthPin" type="Node2D" parent="."]
+position = Vector2(1816, 670)
+script = ExtResource("9_mfkcs")
+
+[node name="Groove" type="Sprite2D" parent="FourthPin"]
+texture = ExtResource("8_g22he")
+
+[node name="Spring" type="Sprite2D" parent="FourthPin"]
+position = Vector2(0, 204)
+texture = ExtResource("9_8eswm")
+offset = Vector2(0, -100.86)
+
+[node name="PurplePin" type="Sprite2D" parent="FourthPin"]
+position = Vector2(0, -176)
+texture = ExtResource("16_tttmw")
+
+[node name="YellowPin" type="Sprite2D" parent="FourthPin/PurplePin"]
+position = Vector2(0, 108)
+texture = ExtResource("17_7v6it")
+
+[node name="Area2D" type="Area2D" parent="FourthPin/PurplePin"]
+position = Vector2(0, 26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FourthPin/PurplePin/Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_g22he")
+
+[node name="Marker2D" type="Marker2D" parent="FourthPin"]
+position = Vector2(0, -299)
