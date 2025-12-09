@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvbidd2t7imhj"
-path.bptc="res://.godot/imported/T_RomanStoneWall_te0oehug_1K_ORDp.EXR-90fc568cb20ee7da12ed13be050e963e.bptc.ctex"
+uid="uid://b6pq2k1x5ikld"
+path="res://.godot/imported/MAP.PNG-7f56a29fc2d5f8eb21bbb7be0873936b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/T_RomanStoneWall_te0oehug_1K_ORDp.EXR"
-dest_files=["res://.godot/imported/T_RomanStoneWall_te0oehug_1K_ORDp.EXR-90fc568cb20ee7da12ed13be050e963e.bptc.ctex"]
+source_file="res://assets/textures/MAP.PNG"
+dest_files=["res://.godot/imported/MAP.PNG-7f56a29fc2d5f8eb21bbb7be0873936b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

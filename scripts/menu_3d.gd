@@ -73,4 +73,35 @@ func journal_next() -> void:
 			
 	
 func journal_back() -> void:
-	pass
+	match current_target:
+		1:
+			pass
+	
+		2:
+			var tween = create_tween()
+			tween.set_parallel(true)
+			tween.tween_property(Camera, "position", Target1.position, tween_time)
+			tween.tween_property(Camera, "rotation", Target1.rotation, tween_time)
+			await tween.finished
+			current_target = 1
+		3:
+			var tween = create_tween()
+			tween.set_parallel(true)
+			tween.tween_property(Camera, "position", Target2.position, tween_time)
+			tween.tween_property(Camera, "rotation", Target2.rotation, tween_time)
+			await  tween.finished
+			current_target = 2
+		4:
+			var tween = create_tween()
+			tween.set_parallel(true)
+			tween.tween_property(Camera, "position", Target3.position, tween_time)
+			tween.tween_property(Camera, "rotation", Target3.rotation, tween_time)
+			await tween.finished
+			current_target = 3
+		5:
+			var tween = create_tween()
+			tween.set_parallel(true)
+			tween.tween_property(Camera, "position", Target4.position, tween_time_cinematic)
+			tween.tween_property(Camera, "rotation", Target4.rotation, tween_time_cinematic)
+			await tween.finished
+			current_target = 4

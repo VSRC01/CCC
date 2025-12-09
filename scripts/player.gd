@@ -11,6 +11,7 @@ var speed : float = 4
 var movement_velocity : Vector3 
 var acceleration = 0.6
 
+
 		#██████  ███████  █████  ██████  ██    ██ 
 		#██   ██ ██      ██   ██ ██   ██  ██  ██  
 		#██████  █████   ███████ ██   ██   ████   
@@ -57,7 +58,12 @@ var is_holding_model : bool = false
 var hold_pannel
 var hold_model
 var ray_parent
-						  
+
+@onready var left_mouse: Sprite2D = $LeftMouse
+@onready var crosshair: Sprite2D = $Crosshair
+
+var lockpick_minigame = preload("res://scenes/lockpick_minigame.tscn")
+	  
 func _input(_event: InputEvent) -> void:
 	if _event is InputEventMouseMotion and possessed and not paused and is_camera_mode:
 		Camera.rotation.x += -_event.screen_relative.y * mouse_sense
@@ -104,7 +110,6 @@ func _input(_event: InputEvent) -> void:
 			 # open camera 
 			pass                                                             
 		if Input.is_action_just_pressed("left_mouse"):
-			print("left_mouse")
 			#██      ███████ ███████ ████████         ███    ███  ██████  ██    ██ ███████ ███████ 
 			#██      ██      ██         ██            ████  ████ ██    ██ ██    ██ ██      ██      
 			#██      █████   █████      ██            ██ ████ ██ ██    ██ ██    ██ ███████ █████   
@@ -122,8 +127,17 @@ func _input(_event: InputEvent) -> void:
 				hold_model.freeze = false
 				hold_model = null
 				return
-			if not is_camera_mode and not is_holding_pannel and not is_holding_model:
+			if not is_camera_mode and not is_holding_pannel and not is_holding_model and not paused:
 				var ray_collider = ray_cast_3d.get_collider()
+				if ray_collider is StaticBody3D:
+					if ray_collider.find_parent("CellDoor"):
+						paused = true
+						var lockpick_node = lockpick_minigame.instantiate()
+						ray_collider.find_parent("CellDoor").add_child(lockpick_node)
+						cell_phone.visible = false
+						left_mouse.visible = false
+						crosshair.visible = false
+						
 				if ray_collider is RigidBody3D:
 					if ray_collider.get_parent().name == "Maquete":
 						ray_parent = ray_collider.get_parent()
@@ -200,6 +214,20 @@ func camera_mode() -> void:
 		#██      ██   ██    ██         ██ ██ ██           ██         ██      ██   ██ ██    ██ ██      ██           ██      ██ 
 #███████ ██      ██   ██    ██    ███████ ██  ██████ ███████ ███████ ██      ██   ██  ██████   ██████ ███████ ███████ ███████ 
 func _physics_process(delta: float) -> void:
+	var ray_collider = ray_cast_3d.get_collider()
+	if ray_collider:
+		if ray_collider is StaticBody3D:
+			if ray_collider.find_parent("CellDoor"):
+				crosshair.visible = true
+				left_mouse.visible = true
+		if ray_collider is RigidBody3D:
+			crosshair.visible = true
+			left_mouse.visible = true
+	else:
+		crosshair.visible = false
+		left_mouse.visible = false
+		
+		
 	camera_positioner()
 		
 	if not is_on_floor():
@@ -223,11 +251,5 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 	
-	
- #██████       ██  █████  ██    ██  ██████  ██      ████████  ██████  
-#██    ██      ██ ██   ██ ██    ██ ██    ██ ██         ██    ██    ██ 
-#██    ██      ██ ███████ ██    ██ ██    ██ ██         ██    ██    ██ 
-#██    ██ ██   ██ ██   ██  ██  ██  ██    ██ ██         ██    ██    ██ 
- #██████   █████  ██   ██   ████    ██████  ███████    ██     ██████  
 																	 
 																	 

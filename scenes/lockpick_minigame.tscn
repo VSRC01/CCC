@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cr4ymdgst5uao"]
+[gd_scene load_steps=30 format=3 uid="uid://cr4ymdgst5uao"]
 
 [ext_resource type="Script" uid="uid://c7r8o6th3jmh8" path="res://scripts/lockpick_minigame.gd" id="1_8eswm"]
 [ext_resource type="Texture2D" uid="uid://dr76mufgqkybq" path="res://assets/lockpick-assets/lockpick-assets_10.svg" id="1_pdbna"]
@@ -19,6 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://drax2nv5ji34r" path="res://assets/lockpick-assets/lockpick-assets_16.svg" id="15_npht6"]
 [ext_resource type="Texture2D" uid="uid://c141vqhjmxl6f" path="res://assets/lockpick-assets/lockpick-assets_19.svg" id="16_tttmw"]
 [ext_resource type="Texture2D" uid="uid://dbeulk330peww" path="res://assets/lockpick-assets/lockpick-assets_20.svg" id="17_7v6it"]
+[ext_resource type="Texture2D" uid="uid://dc64uu1jdfcej" path="res://assets/inputs/tile_0120.png" id="20_npht6"]
+[ext_resource type="Texture2D" uid="uid://ds7rpigb4swn4" path="res://assets/inputs/tile_0122.png" id="21_tttmw"]
+[ext_resource type="Texture2D" uid="uid://twr4hvbujqig" path="res://assets/inputs/tile_0235.png" id="22_7v6it"]
+[ext_resource type="Texture2D" uid="uid://bwq8etipb7q31" path="res://assets/inputs/tile_0236.png" id="23_b2joi"]
+[ext_resource type="Texture2D" uid="uid://odqp7qexunm1" path="res://assets/inputs/tile_0237.png" id="24_3bf8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8eswm"]
 size = Vector2(489, 9)
@@ -208,3 +213,33 @@ shape = SubResource("RectangleShape2D_g22he")
 
 [node name="Marker2D" type="Marker2D" parent="FourthPin"]
 position = Vector2(0, -299)
+
+[node name="Tile0120" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(744, 997)
+scale = Vector2(8.75, 8.75)
+texture = ExtResource("20_npht6")
+
+[node name="Tile0121" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(897, 997)
+scale = Vector2(8.75, 8.75)
+texture = ExtResource("21_tttmw")
+
+[node name="Tile0122" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1076, 997)
+scale = Vector2(8.75, 8.75)
+texture = ExtResource("22_7v6it")
+
+[node name="Tile0123" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1216, 997)
+scale = Vector2(8.75, 8.75)
+texture = ExtResource("23_b2joi")
+
+[node name="Tile0124" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1357, 997)
+scale = Vector2(8.75, 8.75)
+texture = ExtResource("24_3bf8a")

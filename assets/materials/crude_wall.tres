@@ -1,0 +1,14 @@
+[gd_resource type="ORMMaterial3D" load_steps=4 format=3 uid="uid://f84rsgmony1n"]
+
+[ext_resource type="Texture2D" uid="uid://vpm34xarrr7t" path="res://assets/textures/T_Roman_Stone_Wall_te0oehug_1K_D.EXR" id="1_ebd4i"]
+[ext_resource type="Texture2D" uid="uid://b2pqv75cmnqha" path="res://assets/textures/T_Roman_Stone_Wall_te0oehug_1K_N.EXR" id="2_xeost"]
+[ext_resource type="Texture2D" uid="uid://cvbidd2t7imhj" path="res://assets/textures/T_RomanStoneWall_te0oehug_1K_ORDp.EXR" id="3_w47g0"]
+
+[resource]
+albedo_texture = ExtResource("1_ebd4i")
+orm_texture = ExtResource("3_w47g0")
+normal_enabled = true
+normal_texture = ExtResource("2_xeost")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true

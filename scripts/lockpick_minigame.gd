@@ -100,9 +100,16 @@ func try_lock(pin) -> void:
 	check_all()
 	
 var locked_pin_amount : int = 0
+var completed : bool = false
 
 func check_all():
 	if locked_pin_amount == 4:
 		var tween = create_tween()
 		tween.tween_property(lockpick_assets_2, "rotation", deg_to_rad(90), 0.5)
-	
+		await tween.finished
+		self.get_parent().open()
+		completed = true
+		find_parent("Main").player.cell_phone.visible = true
+		find_parent("Main").player.paused = false
+		self.queue_free()
+		
