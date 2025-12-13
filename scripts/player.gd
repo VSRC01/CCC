@@ -53,10 +53,12 @@ func _unhandled_input(event: InputEvent) -> void:
 #███████ ██ ██   ████ ██       ██████     ██        
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 
+var is_holding_bell : bool = false
 var is_holding_pannel : bool = false
 var is_holding_model : bool = false
 var hold_pannel
 var hold_model
+var hold_bell
 var ray_parent
 
 @onready var left_mouse: Sprite2D = $LeftMouse
@@ -115,6 +117,12 @@ func _input(_event: InputEvent) -> void:
 			#██      █████   █████      ██            ██ ████ ██ ██    ██ ██    ██ ███████ █████   
 			#██      ██      ██         ██            ██  ██  ██ ██    ██ ██    ██      ██ ██      
 			#███████ ███████ ██         ██    ███████ ██      ██  ██████   ██████  ███████ ███████   
+			if is_holding_bell:
+				hold_bell.reparent(ray_parent)
+				is_holding_bell = false
+				hold_bell.freeze = false
+				hold_bell = null
+				return
 			if is_holding_pannel:
 				hold_pannel.reparent(ray_parent)
 				is_holding_pannel = false	
@@ -127,7 +135,7 @@ func _input(_event: InputEvent) -> void:
 				hold_model.freeze = false
 				hold_model = null
 				return
-			if not is_camera_mode and not is_holding_pannel and not is_holding_model and not paused:
+			if not is_camera_mode and not is_holding_pannel and not is_holding_model and not is_holding_bell and not paused:
 				var ray_collider = ray_cast_3d.get_collider()
 				if ray_collider is StaticBody3D:
 					if ray_collider.find_parent("CellDoor"):
@@ -137,8 +145,17 @@ func _input(_event: InputEvent) -> void:
 						cell_phone.visible = false
 						left_mouse.visible = false
 						crosshair.visible = false
-						
 				if ray_collider is RigidBody3D:
+					if ray_collider.get_parent().name == "BellRoom":
+						ray_parent = ray_collider.get_parent()
+						hold_bell = ray_collider
+						hold_bell.reparent(Camera)
+						hold_bell.freeze = true
+						var tween = create_tween()
+						tween.set_parallel()
+						tween.tween_property(hold_bell, "position", Vector3(0,0,-2), .5)
+						tween.tween_property(hold_bell, "rotation", Vector3(deg_to_rad(0), deg_to_rad(0), deg_to_rad(0)), .5)
+						is_holding_bell = true
 					if ray_collider.get_parent().name == "Maquete":
 						ray_parent = ray_collider.get_parent()
 						hold_model = ray_collider

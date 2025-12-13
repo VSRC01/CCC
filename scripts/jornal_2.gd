@@ -5,6 +5,7 @@ extends "res://scripts/jornal_1.gd"
 @onready var alto_area_3d: Area3D = $Alto/Area3D
 
 @export var world_environment : WorldEnvironment
+@export var main : Node3D
 
 func _ready() -> void:
 	baixo_area_3d.mouse_entered.connect(baixo_mouse_entered)
@@ -21,23 +22,11 @@ func _ready() -> void:
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_mouse"):
 		if baixo_mouse_hovering:
-			if world_environment:
-				world_environment.environment.ssr_enabled = false
-				world_environment.environment.ssao_enabled = false
-				world_environment.environment.ssil_enabled = false
-				world_environment.environment.sdfgi_enabled = false
+			main.change_graphics_preset(main.graphics_presets.low)
 		if medio_mouse_hovering:
-			if world_environment:
-				world_environment.environment.ssr_enabled = true
-				world_environment.environment.ssao_enabled = true
-				world_environment.environment.ssil_enabled = true
-				world_environment.environment.sdfgi_enabled = false
+			main.change_graphics_preset(main.graphics_presets.medium)
 		if alto_mouse_hovering:
-			if world_environment:
-				world_environment.environment.ssr_enabled = true
-				world_environment.environment.ssao_enabled = true
-				world_environment.environment.ssil_enabled = true
-				world_environment.environment.sdfgi_enabled = true
+			main.change_graphics_preset(main.graphics_presets.high)
 		if next_mouse_hovering:
 			get_parent().journal_next()
 		if back_mouse_hovering:

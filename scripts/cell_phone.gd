@@ -7,6 +7,13 @@ extends Control
 @onready var understood: Button = $ScreenContainer/Frame/MarginContainer/Screen/Tutorial/VBoxContainer/Understood
 @onready var camera_understood: Button = $ScreenContainer/Frame/MarginContainer/Screen/CameraTuto/VBoxContainer/CameraUnderstood
 @onready var camera_button: Button = $ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer/CameraButton
+@onready var settings_button: Button = $ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer/SettingsButton
+@onready var settings_back_button: Button = $ScreenContainer/Frame/MarginContainer/Settings/BackButton
+@onready var settings_low_button: CheckButton = $ScreenContainer/Frame/MarginContainer/Settings/LowButton
+@onready var settings_medium_button: CheckButton = $ScreenContainer/Frame/MarginContainer/Settings/MediumButton
+@onready var settings_high_button: CheckButton = $ScreenContainer/Frame/MarginContainer/Settings/HighButton
+
+
 
 enum mode {full, mini, camera}
 var current_mode : mode = mode.mini
@@ -24,7 +31,11 @@ func _ready() -> void:
 	understood.button_down.connect(clear_tip)
 	camera_understood.button_down.connect(clear_tip)
 	camera_button.button_down.connect(camera_mode)
-
+	settings_button.button_down.connect(settings_mode)
+	settings_back_button.button_down.connect(settings_back)
+	settings_low_button.button_down.connect(settings_low)
+	settings_medium_button.button_down.connect(settings_medium)
+	settings_high_button.button_down.connect(settings_high)
 
 #███████ ███    ██  █████  ██████  ██      ███████ 
 #██      ████   ██ ██   ██ ██   ██ ██      ██      
@@ -201,3 +212,32 @@ func take_photo() -> void:
 	var tween = create_tween()
 	tween.tween_property(sub_viewport_container, "scale", Vector2(0.8, 0.8), .1)
 	tween.tween_property(sub_viewport_container, "scale", Vector2(1, 1), .1)
+
+@export var main : Node3D
+@onready var settings: VBoxContainer = $ScreenContainer/Frame/MarginContainer/Settings
+
+#███████ ███████ ████████ ████████ ██ ███    ██  ██████  ███████         ███    ███  ██████  ██████  ███████ 
+#██      ██         ██       ██    ██ ████   ██ ██       ██              ████  ████ ██    ██ ██   ██ ██      
+#███████ █████      ██       ██    ██ ██ ██  ██ ██   ███ ███████         ██ ████ ██ ██    ██ ██   ██ █████   
+	 #██ ██         ██       ██    ██ ██  ██ ██ ██    ██      ██         ██  ██  ██ ██    ██ ██   ██ ██      
+#███████ ███████    ██       ██    ██ ██   ████  ██████  ███████ ███████ ██      ██  ██████  ██████  ███████                                                                                                          
+func settings_mode() -> void:
+	menu.visible = false
+	settings.visible = true
+	
+func settings_back() -> void:
+	menu.visible = true
+	settings.visible = false
+
+func settings_low() -> void:
+	main.change_graphics_preset(main.graphics_presets.low)
+	settings_medium_button.button_pressed = false
+	settings_high_button.button_pressed = false
+func settings_medium() -> void:
+	main.change_graphics_preset(main.graphics_presets.medium)
+	settings_low_button.button_pressed = false
+	settings_high_button.button_pressed = false
+func settings_high() -> void:
+	main.change_graphics_preset(main.graphics_presets.high)
+	settings_low_button.button_pressed = false
+	settings_medium_button.button_pressed = false

@@ -10,4 +10,4 @@ func open() -> void:
 	var second_tween = create_tween()
 	door_tween.tween_property(folha_porta, "rotation:y", deg_to_rad(0), 1)
 	second_tween.tween_property(folha_porta_2, "rotation:y", deg_to_rad(0), 1)
-	is_open = true
+	

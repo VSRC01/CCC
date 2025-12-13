@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=3 uid="uid://cx7nil0nqckni"]
+[gd_scene load_steps=186 format=3 uid="uid://cx7nil0nqckni"]
 
 [ext_resource type="Script" uid="uid://k1mgwhtln232" path="res://scripts/main.gd" id="1_5he1u"]
 [ext_resource type="PackedScene" uid="uid://bk5f6w708r53j" path="res://assets/CCC/maquete/CasaDeCamaraeCadeiaMaquete.fbx" id="1_o5qli"]
@@ -65,6 +65,9 @@
 [ext_resource type="PackedScene" uid="uid://d0wifbs3il8d3" path="res://assets/models/sino.FBX" id="53_o7ddy"]
 [ext_resource type="Material" uid="uid://f84rsgmony1n" path="res://assets/materials/crude_wall.tres" id="56_kf5aa"]
 [ext_resource type="Script" uid="uid://224w8senyi8u" path="res://scripts/door_cell.gd" id="60_xhfw6"]
+[ext_resource type="Script" uid="uid://dulxox0i0eg50" path="res://scripts/door_pivot.gd" id="61_r4e17"]
+[ext_resource type="Script" uid="uid://dh33ot8sybqpe" path="res://scripts/bell_area.gd" id="62_1epgm"]
+[ext_resource type="Script" uid="uid://c412ylyfjl0ow" path="res://scripts/bell_room.gd" id="62_152kg"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_y6deb"]
 energy_multiplier = 3.0
@@ -124,6 +127,8 @@ point_count = 1
 
 [sub_resource type="CurveTexture" id="CurveTexture_vxglm"]
 curve = SubResource("Curve_2wyq8")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xhfw6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dp3eg"]
 
@@ -379,6 +384,12 @@ albedo_texture = SubResource("ViewportTexture_txyw0")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ty1g6"]
 size = Vector3(1, 1, 0.96014404)
 
+[sub_resource type="BoxMesh" id="BoxMesh_r4e17"]
+size = Vector3(0.125, 2.96, 1.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y57op"]
+points = PackedVector3Array(-0.08599207, -1.5034921, -0.623492, 0.10194445, 1.5034921, 0.6450794, -0.08599207, 1.5034921, 0.6450794, 0.10194445, -1.5034921, 0.6450794, 0.10194445, 1.5034921, -0.623492, -0.08599207, 1.5034921, -0.623492, -0.08599207, -1.5034921, 0.6450794, 0.10194445, -1.5034921, -0.623492)
+
 [sub_resource type="QuadMesh" id="QuadMesh_t5ykj"]
 size = Vector2(2.86, 5.35)
 
@@ -388,8 +399,11 @@ size = Vector2(2.405, 1.4)
 [sub_resource type="QuadMesh" id="QuadMesh_kf5aa"]
 size = Vector2(2.695, 5.35)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_xhfw6"]
+radius = 1.0163288
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhfw6"]
-size = Vector3(0.38354492, 0.8310547, 0.27648926)
+size = Vector3(0.10858154, 0.19638062, 0.09353638)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tm6hj"]
 cull_mode = 2
@@ -422,6 +436,15 @@ albedo_color = Color(0, 0, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_tm6hj"]
 size = Vector3(2.635, 1, 6.105)
 
+[sub_resource type="BoxMesh" id="BoxMesh_152kg"]
+size = Vector3(0.155, 3.04, 1.69)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_152kg"]
+points = PackedVector3Array(-0.101626985, -1.544127, -0.8691269, 0.09138889, 1.544127, 0.8680159, -0.101626985, 1.544127, 0.8680159, 0.09138889, -1.544127, 0.8680159, 0.09138889, 1.544127, -0.8691269, -0.101626985, 1.544127, -0.8691269, -0.101626985, -1.544127, 0.8680159, 0.09138889, -1.544127, -0.8691269)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r4e17"]
+points = PackedVector3Array(-0.101626985, -1.544127, -0.8691269, 0.09138889, 1.544127, 0.8680159, -0.101626985, 1.544127, 0.8680159, 0.09138889, -1.544127, 0.8680159, 0.09138889, 1.544127, -0.8691269, -0.101626985, 1.544127, -0.8691269, -0.101626985, -1.544127, 0.8680159, 0.09138889, -1.544127, -0.8691269)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5he1u")
 
@@ -452,7 +475,7 @@ shape = SubResource("CapsuleShape3D_choun")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.4883678, -0.53563905, -2.3413525e-08)
 shape = SubResource("SeparationRayShape3D_ya4ey")
 
-[node name="CellPhone" type="Control" parent="Player"]
+[node name="CellPhone" type="Control" parent="Player" node_paths=PackedStringArray("main")]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
@@ -462,6 +485,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("13_muem4")
+main = NodePath("../..")
 
 [node name="ScreenContainer" type="AspectRatioContainer" parent="Player/CellPhone"]
 texture_filter = 1
@@ -530,9 +554,9 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_0ld40")
 [node name="Label2" type="Label" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Tutorial/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "asojdhasodhj
-asldhjkasdjnkl
-wasd
+text = "para se mover 
+use wasd e 
+para olhar use o
 mouse"
 horizontal_alignment = 1
 
@@ -589,6 +613,7 @@ texture = ExtResource("18_y6deb")
 centered = false
 
 [node name="SaveButton" type="Button" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/Menu/GridContainer"]
+visible = false
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 
@@ -622,10 +647,10 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_0ld40")
 [node name="Label2" type="Label" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/CameraTuto/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "asojdhasodhj
-asldhjkasdjnkl
-wasd
-mouse"
+text = "Clique no icone
+da câmera e tire
+uma foto do
+qr code"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Screen/CameraTuto/VBoxContainer"]
@@ -687,6 +712,51 @@ position = Vector2(269.1666, 886.02954)
 scale = Vector2(76.08671, 77.33694)
 mesh = SubResource("SphereMesh_og1vs")
 texture = SubResource("CurveTexture_vxglm")
+
+[node name="Settings" type="VBoxContainer" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Settings"]
+layout_mode = 2
+theme = ExtResource("14_dp3eg")
+theme_override_font_sizes/font_size = 80
+text = "Qualidade"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 199
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xhfw6")
+
+[node name="LowButton" type="CheckButton" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Settings"]
+layout_mode = 2
+theme = ExtResource("14_dp3eg")
+theme_override_font_sizes/font_size = 30
+text = "Baixo"
+
+[node name="MediumButton" type="CheckButton" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Settings"]
+layout_mode = 2
+theme = ExtResource("14_dp3eg")
+theme_override_font_sizes/font_size = 30
+text = "Médio"
+
+[node name="HighButton" type="CheckButton" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Settings"]
+layout_mode = 2
+theme = ExtResource("14_dp3eg")
+theme_override_font_sizes/font_size = 30
+text = "Alto"
+
+[node name="HSeparator2" type="HSeparator" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 354
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xhfw6")
+
+[node name="BackButton" type="Button" parent="Player/CellPhone/ScreenContainer/Frame/MarginContainer/Settings"]
+layout_mode = 2
+theme = ExtResource("14_dp3eg")
+theme_override_font_sizes/font_size = 32
+text = "Voltar"
 
 [node name="TabContainer" type="VBoxContainer" parent="Player/CellPhone"]
 texture_filter = 1
@@ -978,31 +1048,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04704666, 0.9160452, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainDoor/Area3D"]
 shape = SubResource("SphereShape3D_yc10j")
 
-[node name="Door" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.627608, 2.992224, -14.026694)
-script = ExtResource("36_c6pm6")
-
-[node name="FolhaPorta" parent="Door" instance=ExtResource("12_eb6dy")]
-transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 0, -1, 1, -4.371139e-08, -4.3711385e-08, -0.7961192, 2.1063757, 4.7000336e-07)
-
-[node name="2aa129d47ee01cb0e7f9b3775c759603" parent="Door/FolhaPorta" index="0"]
-transform = Transform3D(1, 1.6703741e-22, 0, 0, 0, 1, -3.3407487e-22, -1, 0, 0, -0.03197503, 0)
-surface_material_override/0 = ExtResource("30_dgi5k")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Door/FolhaPorta/2aa129d47ee01cb0e7f9b3775c759603" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/FolhaPorta/2aa129d47ee01cb0e7f9b3775c759603/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_gqmmt")
-
-[node name="FolhaPorta2" parent="Door" instance=ExtResource("12_eb6dy")]
-transform = Transform3D(1.3113416e-07, 1, 0, 4.371138e-08, -7.642741e-15, -1, -1, 1.3113416e-07, -4.3711385e-08, 0.8227916, 2.1063757, 6.7715075e-07)
-
-[node name="2aa129d47ee01cb0e7f9b3775c759603" parent="Door/FolhaPorta2" index="0"]
-transform = Transform3D(1, -3.3407482e-22, 0, 0, 0, 1, 0, -1, 0, 0, -0.077163935, 0)
-surface_material_override/0 = ExtResource("30_dgi5k")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Door/FolhaPorta2/2aa129d47ee01cb0e7f9b3775c759603" index="0"]
-
 [node name="Lights" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.719914, 4.3394356, -3.5559292)
 
@@ -1191,12 +1236,13 @@ shape = SubResource("BoxShape3D_tipki")
 [node name="Target3" type="Marker3D" parent="Menu3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.890419, 4.563116, 1.4020059)
 
-[node name="Jornal2" type="MeshInstance3D" parent="Menu3D" node_paths=PackedStringArray("world_environment")]
+[node name="Jornal2" type="MeshInstance3D" parent="Menu3D" node_paths=PackedStringArray("world_environment", "main")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 24.959047, 4.544636, 0)
 mesh = SubResource("PlaneMesh_choun")
 surface_material_override/0 = SubResource("StandardMaterial3D_tipki")
 script = ExtResource("37_t5ykj")
 world_environment = NodePath("../../WorldEnvironment")
+main = NodePath("../..")
 
 [node name="Title" type="Label3D" parent="Menu3D/Jornal2"]
 transform = Transform3D(1, 0, 0, 0, -1.0331604e-07, 1.0000001, 0, -1.0000001, -1.0331604e-07, 0, 0.032339916, -0.29670095)
@@ -1873,8 +1919,7 @@ size = Vector2i(962, 722)
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("47_vc5cj")
-volume_db = 0.99999994
-loop = true
+volume_db = 0.10000051
 
 [node name="Area3D" type="Area3D" parent="VideoRoom"]
 
@@ -1922,6 +1967,19 @@ surface_material_override/0 = ExtResource("30_dgi5k")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01087904)
 shape = SubResource("ConvexPolygonShape3D_gqmmt")
 
+[node name="Pivot" type="Node3D" parent="VideoRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0903673, 0, 0.9304266)
+script = ExtResource("61_r4e17")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VideoRoom/Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2885303, -0.518343)
+mesh = SubResource("BoxMesh_r4e17")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="VideoRoom/Pivot/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VideoRoom/Pivot/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_y57op")
+
 [node name="MediumCellRoom" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4634056, 3.629831, -12.687573)
 
@@ -1955,30 +2013,69 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.93
 mesh = SubResource("QuadMesh_kf5aa")
 surface_material_override/0 = ExtResource("56_kf5aa")
 
-[node name="BellRoom" type="Node3D" parent="."]
+[node name="BellRoom" type="Node3D" parent="." node_paths=PackedStringArray("door")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.158882, 3.624343, -17.218763)
+script = ExtResource("62_152kg")
+door = NodePath("DoorN3")
+
+[node name="Area3D2" type="Area3D" parent="BellRoom"]
+transform = Transform3D(0.21213204, 0, -0.21213204, 0, 0.3, 0, 0.21213204, 0, 0.21213204, -1.0529137, 0.47337627, -1.4297161)
+script = ExtResource("62_1epgm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BellRoom/Area3D2"]
+shape = SubResource("SphereShape3D_xhfw6")
 
 [node name="SinoMarker3D" type="Marker3D" parent="BellRoom"]
 transform = Transform3D(0.21213204, 0, -0.21213204, 0, 0.3, 0, 0.21213204, 0, 0.21213204, -1.0529137, 0.47337627, -1.4297161)
+
+[node name="Area3D" type="Area3D" parent="BellRoom"]
+transform = Transform3D(0.21213204, 0, -0.21213204, 0, 0.3, 0, 0.21213204, 0, 0.21213204, -0.60961723, 0.47337627, -0.9864197)
+script = ExtResource("62_1epgm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BellRoom/Area3D"]
+shape = SubResource("SphereShape3D_xhfw6")
 
 [node name="SinoMarker3D2" type="Marker3D" parent="BellRoom"]
 transform = Transform3D(0.21213204, 0, -0.21213204, 0, 0.3, 0, 0.21213204, 0, 0.21213204, -0.60961723, 0.47337627, -0.9864197)
 
 [node name="Sino" type="RigidBody3D" parent="BellRoom"]
-transform = Transform3D(0.21213204, 0, -0.21213204, 0, 0.3, 0, 0.21213204, 0, 0.21213204, -3.620201, -0.56963253, 0.2514553)
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.620201, -0.56963253, 0.2514553)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BellRoom/Sino"]
-transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1, -0.029403687, 0.084472656, -0.01322937)
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1, -0.010267258, 0.014480591, 0.0061950684)
 shape = SubResource("BoxShape3D_xhfw6")
 
 [node name="sino" parent="BellRoom/Sino" instance=ExtResource("53_o7ddy")]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
 [node name="sino" parent="BellRoom/Sino/sino" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.016642947, 0.00533104, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_tm6hj")
+surface_material_override/1 = SubResource("StandardMaterial3D_tm6hj")
+surface_material_override/2 = SubResource("StandardMaterial3D_tm6hj")
+surface_material_override/3 = SubResource("StandardMaterial3D_tm6hj")
 
 [node name="UCX_sino" parent="BellRoom/Sino/sino" index="1"]
+visible = false
+
+[node name="Sino2" type="RigidBody3D" parent="BellRoom"]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0.7302164, -0.56963253, -0.23360324)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BellRoom/Sino2"]
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1, -0.010267258, 0.014480591, 0.0061950684)
+shape = SubResource("BoxShape3D_xhfw6")
+
+[node name="sino" parent="BellRoom/Sino2" instance=ExtResource("53_o7ddy")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="sino" parent="BellRoom/Sino2/sino" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.016642947, 0.00533104, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_tm6hj")
+surface_material_override/1 = SubResource("StandardMaterial3D_tm6hj")
+surface_material_override/2 = SubResource("StandardMaterial3D_tm6hj")
+surface_material_override/3 = SubResource("StandardMaterial3D_tm6hj")
+
+[node name="UCX_sino" parent="BellRoom/Sino2/sino" index="1"]
 visible = false
 
 [node name="Baroque_Cathedral_1231181830" parent="BellRoom" instance=ExtResource("50_j2jfr")]
@@ -2010,6 +2107,105 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53755, -1.1439207, 0)
 mesh = SubResource("BoxMesh_tm6hj")
 
+[node name="DoorN3" type="Node3D" parent="BellRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.555271, -0.7234292, 2.8312564)
+script = ExtResource("36_c6pm6")
+
+[node name="FolhaPorta" parent="BellRoom/DoorN3" instance=ExtResource("12_eb6dy")]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 0, -1, 1, -4.371139e-08, -4.3711385e-08, -0.7372427, 2.1063757, 4.7257694e-07)
+
+[node name="2aa129d47ee01cb0e7f9b3775c759603" parent="BellRoom/DoorN3/FolhaPorta" index="0"]
+transform = Transform3D(1, 1.6703741e-22, 0, 0, 0, 1, -3.3407487e-22, -1, 0, 0, -0.03197503, 0)
+surface_material_override/0 = ExtResource("30_dgi5k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BellRoom/DoorN3/FolhaPorta/2aa129d47ee01cb0e7f9b3775c759603" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BellRoom/DoorN3/FolhaPorta/2aa129d47ee01cb0e7f9b3775c759603/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_gqmmt")
+
+[node name="FolhaPorta2" parent="BellRoom/DoorN3" instance=ExtResource("12_eb6dy")]
+transform = Transform3D(1.3113416e-07, 1, 0, 4.371138e-08, -7.642741e-15, -1, -1, 1.3113416e-07, -4.3711385e-08, 0.8048663, 2.1063757, 6.7480016e-07)
+
+[node name="2aa129d47ee01cb0e7f9b3775c759603" parent="BellRoom/DoorN3/FolhaPorta2" index="0"]
+transform = Transform3D(1, -3.3407482e-22, 0, 0, 0, 1, 0, -1, 0, -4e-45, -0.03072071, -1.323489e-23)
+surface_material_override/0 = ExtResource("30_dgi5k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BellRoom/DoorN3/FolhaPorta2/2aa129d47ee01cb0e7f9b3775c759603" index="0"]
+
+[node name="UfsjRoom" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.320051, 3.433947, -23.613468)
+
+[node name="Pivot1" type="Node3D" parent="UfsjRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6823807)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="UfsjRoom/Pivot1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9753747, -0.85375595)
+mesh = SubResource("BoxMesh_152kg")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="UfsjRoom/Pivot1/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UfsjRoom/Pivot1/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_152kg")
+
+[node name="Pivot2" type="Node3D" parent="UfsjRoom"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.9642052e-07, 0, -1.7082748)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="UfsjRoom/Pivot2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9753747, -0.85375595)
+mesh = SubResource("BoxMesh_152kg")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="UfsjRoom/Pivot2/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UfsjRoom/Pivot2/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r4e17")
+
+[node name="CellRoom2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.11943, 3.433947, -23.613468)
+
+[node name="Pivot1" type="Node3D" parent="CellRoom2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6823807)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CellRoom2/Pivot1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9753747, -0.85375595)
+mesh = SubResource("BoxMesh_152kg")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CellRoom2/Pivot1/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellRoom2/Pivot1/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_152kg")
+
+[node name="Pivot2" type="Node3D" parent="CellRoom2"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.9642052e-07, 0, -1.7082748)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CellRoom2/Pivot2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9753747, -0.85375595)
+mesh = SubResource("BoxMesh_152kg")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CellRoom2/Pivot2/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CellRoom2/Pivot2/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r4e17")
+
+[node name="bathroom" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.11943, 3.433947, -13.596929)
+
+[node name="Pivot1" type="Node3D" parent="bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6823807)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="bathroom/Pivot1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9753747, -0.85375595)
+mesh = SubResource("BoxMesh_152kg")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bathroom/Pivot1/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bathroom/Pivot1/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_152kg")
+
 [connection signal="mouse_entered" from="Menu3D/MenuButton/Area3D" to="Menu3D/MenuButton" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Menu3D/MenuButton/Area3D" to="Menu3D/MenuButton" method="_on_area_3d_mouse_exited"]
 [connection signal="mouse_entered" from="Menu3D/QuickPlayButton/Area3D" to="Menu3D/QuickPlayButton" method="_on_area_3d_mouse_entered"]
@@ -2022,8 +2218,6 @@ mesh = SubResource("BoxMesh_tm6hj")
 [editable path="CasaDeCamaraeCadeiaMaquete"]
 [editable path="MainDoor/FolhaPorta"]
 [editable path="MainDoor/FolhaPorta2"]
-[editable path="Door/FolhaPorta"]
-[editable path="Door/FolhaPorta2"]
 [editable path="DoorN1/FolhaPorta"]
 [editable path="DoorN1/FolhaPorta2"]
 [editable path="SjPannels3D/DoorN2/FolhaPorta"]
@@ -2037,5 +2231,8 @@ mesh = SubResource("BoxMesh_tm6hj")
 [editable path="VideoRoom/CellDoor/FolhaPorta"]
 [editable path="VideoRoom/CellDoor/FolhaPorta2"]
 [editable path="BellRoom/Sino/sino"]
+[editable path="BellRoom/Sino2/sino"]
 [editable path="BellRoom/Baroque_Cathedral_1231181830"]
 [editable path="BellRoom/map"]
+[editable path="BellRoom/DoorN3/FolhaPorta"]
+[editable path="BellRoom/DoorN3/FolhaPorta2"]
